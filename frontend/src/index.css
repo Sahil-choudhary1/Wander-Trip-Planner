@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* ══════════════════════════════════
+   LIGHT MODE (default)
+══════════════════════════════════ */
+:root {
+  --sand: #f5f0e8;
+  --sand-dark: #ede6d8;
+  --ink: #1a1612;
+  --ink-soft: #4a4540;
+  --ink-muted: #8a8580;
+  --terracotta: #c4622d;
+  --terracotta-light: #e8845a;
+  --terracotta-pale: #f5e6de;
+  --teal: #2d6b6b;
+  --teal-light: #3d8a8a;
+  --teal-pale: #deeeed;
+  --gold: #c9973a;
+  --gold-pale: #f5ecda;
+  --white: #ffffff;
+  --nav-bg: rgba(245, 240, 232, 0.92);
+  --card-border: rgba(26, 22, 18, 0.07);
+  --divider: rgba(26, 22, 18, 0.08);
+  --input-border: rgba(26, 22, 18, 0.15);
+  --shadow-sm: 0 2px 8px rgba(26, 22, 18, 0.08);
+  --shadow-md: 0 8px 32px rgba(26, 22, 18, 0.12);
+  --shadow-lg: 0 20px 60px rgba(26, 22, 18, 0.16);
+  --radius: 16px;
+  --radius-sm: 8px;
+  --radius-lg: 24px;
+
+  /* Theme-Aware Semantic Variables */
+  --btn-primary-text: #ffffff;
+  --error-bg: #fef2f2;
+  --error-border: #fecaca;
+  --error-text: #b91c1c;
+  --danger-text: #dc2626;
+  --danger-border: rgba(220, 38, 38, 0.2);
+  --danger-hover: #fef2f2;
+  --hero-bg: #1a1612;
+  --hero-text: #ffffff;
+  --hero-text-muted: rgba(255, 255, 255, 0.7);
+  --hero-border: rgba(255, 255, 255, 0.15);
+  --glass-hover: rgba(255, 255, 255, 0.1);
+}
+
+/* ══════════════════════════════════
+   DARK MODE
+══════════════════════════════════ */
+[data-theme="dark"] {
+  --sand: #0f0e0c;
+  --sand-dark: #1a1916;
+  --ink: #f0ece4;
+  --ink-soft: #c0b8ac;
+  --ink-muted: #706860;
+  --terracotta: #e8845a;
+  --terracotta-light: #f0a070;
+  --terracotta-pale: #2a1a10;
+  --teal: #5ab8b8;
+  --teal-light: #70d0d0;
+  --teal-pale: #0d2626;
+  --gold: #e0ac50;
+  --gold-pale: #2a2010;
+  --white: #1c1a17;
+  --nav-bg: rgba(15, 14, 12, 0.92);
+  --card-border: rgba(255, 255, 255, 0.07);
+  --divider: rgba(255, 255, 255, 0.08);
+  --input-border: rgba(255, 255, 255, 0.15);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+  /* Theme-Aware Semantic Variables */
+  --btn-primary-text: #1c1a17;
+  --error-bg: rgba(220, 38, 38, 0.1);
+  --error-border: rgba(220, 38, 38, 0.3);
+  --error-text: #fca5a5;
+  --danger-text: #f87171;
+  --danger-border: rgba(248, 113, 113, 0.3);
+  --danger-hover: rgba(248, 113, 113, 0.1);
+  --hero-bg: #1c1a17;
+  --hero-text: #f0ece4;
+  --hero-text-muted: #8a8580;
+  --hero-border: rgba(255, 255, 255, 0.1);
+  --glass-hover: rgba(255, 255, 255, 0.05);
+}
+
+/* ══════════════════════════════════
+   BASE STYLES
+══════════════════════════════════ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--sand);
+  color: var(--ink);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+.page-enter {
+  animation: fadeSlideIn 0.4s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--sand-dark); }
+::-webkit-scrollbar-thumb { background: var(--ink-muted); border-radius: 3px; }
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(196, 98, 45, 0.2);
+  border-color: var(--terracotta) !important;
+}
+
+/* Dark mode toggle button */
+.dark-toggle {
+  width: 44px;
+  height: 24px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.dark-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--btn-primary-text);
+  transition: left 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
