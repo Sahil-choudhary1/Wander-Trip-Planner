@@ -105,17 +105,6 @@ npm run dev
 
 The app will run at `http://localhost:5173`
 
----
-
-## 🌐 Live Demo
-
-> Coming soon / Add your deployed links here
-
----
-
-## 📸 Screenshots
-
-> Add screenshots of your app here
 
 ---
 
@@ -126,10 +115,5 @@ The app will run at `http://localhost:5173`
 
 ---
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
 
 ⭐ If you like this project, give it a star on GitHub!
